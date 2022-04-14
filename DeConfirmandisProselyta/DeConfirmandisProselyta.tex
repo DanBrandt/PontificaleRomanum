@@ -1,0 +1,639 @@
+\documentclass[11pt, twoside]{report}
+
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{bbding}
+\usepackage{ragged2e}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{paracol}
+\usepackage{mdframed}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[autocompile]{gregoriotex}
+
+\titleformat{\chapter}[block]{\huge\scshape\filcenter}{}{1em}{}
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
+
+\mdfsetup{skipabove=\topskip, skipbelow=\topskip}
+
+\newcommand{\rubric}[1]{
+	\switchcolumn[0] {
+		\itshape
+		#1
+	}
+}
+
+\newcommand{\latinenglish}[2]{
+	\switchcolumn[0]* {
+		#1
+	}
+	\switchcolumn[1] {
+		\itshape\small
+		#2
+	}
+}
+
+\newcommand{\latinenglishequal}[2]{
+	\switchcolumn[0]* {
+		#1
+	}
+	\switchcolumn[1] {
+		\itshape
+		#2
+	}
+}
+
+\newenvironment{latinenglishsection}
+	{\columnratio{.7, .3} \begin{paracol}{2}}
+	{\end{paracol}}
+
+\newenvironment{latinenglishequalsection}
+	{\columnratio{.5, .5}\begin{paracol}{2}}
+	{\end{paracol}}
+
+\setlength{\columnseprule}{0.4pt}
+
+\newcommand{\heading}[1]{
+	\begin{leftcolumn}
+		#1
+	\end{leftcolumn}
+}
+
+\newcommand{\spanning}[1]{
+	\switchcolumn*[#1]
+}
+
+\newenvironment{verses}[1]
+	{\begin{flushleft} \begin{enumerate}[leftmargin=*] \setcounter{enumi}{#1}}
+	{\end{enumerate} \end{flushleft}}
+
+\newenvironment{versicles}{\par\leavevmode\parskip=0pt}{}
+
+\newenvironment{collect}
+{
+	\leavevmode
+	\parindent=1em
+	\parskip=0pt
+	\noindent Orémus.\par
+}{}
+
+\newenvironment{optionbox}
+{
+	\switchcolumn[0]
+	\begin{mdframed}
+%	\begin{minipage}{0.8\linewidth}
+}{
+%	\end{minipage}
+	\end{mdframed}
+}
+
+\newcommand{\optionrule}{
+	\begin{center}
+	\rule{0.5\linewidth}{0.6pt}
+	\end{center}
+}
+
+\newenvironment{optionruled}
+{
+	\optionrule
+}
+{
+	\optionrule
+}
+
+% for use inside the collect environment
+\newcommand{\Amen}{\par\noindent \Rbar. Amen.}
+
+\begin{document}
+
+%\title{Compline of The Blessed Virgin Mary}
+%\date{ }
+
+\vspace*{4cm}
+
+\begin{center}
+	\textbf{\Huge De Confirmandis et Professionem Fidei Catholicae a Neo-Conversis}\\
+	%{\LARGE According to the Washtenaw Use}
+\end{center}
+
+% REFERENCE: https://latinmassbaptism.com/files/Professionem_Fidei_Catholicae_LatinEnglish.pdf
+
+\vspace*{1cm}
+%\maketitle
+
+%\begin{figure}[h!]
+	%\centering
+%\end{figure}
+
+\hspace{0pt}
+\vfill
+
+\pagebreak
+ 
+%\chapter*{}
+
+\section*{Hymnus}
+
+\begin{latinenglishsection}
+
+\rubric{\color{red}The bell is rung, and the Veni Creator is sung by the Cantors while all process to the sanctuary. After genuflecting before the Tabernacle, the Cantors immediately proceed to the far Gospel side. They continue with the Veni Creator while all the other servers kneel with the priest at the foot of the altar until the Veni Creator is complete.}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{veni_creator_spiritus}
+}{
+	Come, Holy Spirit, Creator blest, and in our souls take up Thy rest; 
+	come with Thy grace and heavenly aid to fill the hearts which Thou hast made.
+	
+	O comforter, to Thee we cry, O heavenly gift of God Most High, 
+	O fount of life and fire of love, and sweet anointing from above.
+	
+	Thou in Thy sevenfold gifts are known; Thou, finger of God's hand we own; 
+	Thou, promise of the Father, Thou Who dost the tongue with power imbue.
+	
+	Kindle our sense from above, and make our hearts o'erflow with love; 
+	with patience firm and virtue high the weakness of our flesh supply.
+	
+	Far from us drive the foe we dread, and grant us Thy peace instead; 
+	so shall we not, with Thee for guide, turn from the path of life aside.
+	
+	Oh, may Thy grace on us bestow the Father and the Son to know; 
+	and Thee, through endless times confessed, of both the eternal Spirit blest.
+	
+	Now to the Father and the Son, Who rose from death, be glory given, 
+	with Thou, O Holy Comforter, henceforth by all in earth and heaven. Amen.
+}
+
+\rubric{\color{red}The priest vests in surplice and purple stole, and sits in front of the altar predella on the Epistle side. The convert is kneeling before him. The convert then makes the Profession of Faith.}
+
+\end{latinenglishsection}
+
+\section*{Professionem}
+
+I, N.N., ... years of age, born outside the Catholic Church, have held and believed errors contrary to her teaching. Now, enlightened by divine grace, I kneel before you, Reverend Father ...., having before my eyes and touching with my hand the holy Gospels. And with firm faith I believe and profess each and all the articles contained in the Apostles' Creed, that is: I believe in God, the Father almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried; He descended into hell, the third day He arose again from the dead; He ascended into heaven, and sits at the right hand of God, the Father almighty, from there He shall come to judge the living and the dead. I believe in the Holy Spirit; the holy Catholic Church; the communion of saints; the forgiveness of sins; the resurrection of the body, and life everlasting. Amen. 
+
+I firmly admit and embrace the apostolic and ecclesiastical traditions and all the other constitutions and ordinances of the Church.
+
+I admit the Sacred Scriptures in the sense which has been held and is still held by holy Mother Church, whose duty it is to judge the true sense and interpretation of Sacred Scripture, and I shall never accept or interpret them in a sense contrary to the unanimous consent of the fathers. I profess that the sacraments of the New Law are truly and precisely seven in number, instituted for the salvation of mankind, though all are not necessary for each individual: baptism, confirmation, holy Eucharist, penance, anointing of the sick, holy orders, and matrimony. I profess that all confer grace, and that baptism, confirmation, and holy orders cannot be repeated without sacrilege. I also accept and admit the ritual of the Catholic Church in the solemn administration of all the aforementioned sacraments.
+
+I accept and hold in each and every part all that has been defined and declared by the Sacred Council of Trent concerning original sin and justification. I profess that in the Mass there is offered to God a true, real, and propitiatory sacrifice for the living and the dead; that in the holy sacrament of the Eucharist the body and blood together with the soul and divinity of our Lord Jesus Christ is really, truly, and substantially present, and that there takes place in the Mass what the Church calls transubstantiation, which is the change of all the substance of bread into the body of Christ and of all substance of wine into His blood. I confess also that in receiving under either of these species one receives Jesus Christ whole and entire. I firmly hold that Purgatory exists and that the souls detained there can be helped by the prayers of the faithful. 
+
+Likewise I hold that the saints, who reign with Jesus Christ, should be venerated and invoked, that they offer prayers to God for us, and that their relics are to be venerated.
+
+I firmly profess that the images of Jesus Christ and of the Mother of God, ever a Virgin, as well as of all the saints should be given due honor and veneration. I also affirm that Jesus Christ left to the Church the faculty to grant indulgences, and that their use is most salutary to the Christian people. I recognize the holy, Roman, Catholic, and apostolic Church as the mother and teacher of all the churches, and I promise and swear true obedience to the Roman Pontiff, successor of St. Peter, the prince of the apostles and vicar of Jesus Christ.
+
+Moreover, without hesitation I accept and profess all that has been handed down, defined, and declared by the sacred canons and by the general councils, especially by the Sacred Council of Trent and by the Vatican General Council, and in special manner all that concerns the primacy and infallibility of the Roman Pontiff. At the same time I condemn and reprove all that the Church has condemned and reproved. This same Catholic faith, outside of which none can be saved, I now freely profess and I truly adhere to it. With the help of God, I promise and swear to maintain and profess this faith entirely, inviolately, and with firm constancy until the last breath of life. And I shall strive, as far as possible, that this same faith shall be held, taught, and publicly professed by all who depend on me and over whom I shall have charge.
+
+So help me God and these holy Gospels. 
+
+{\color{red}\textit{The priest, with the convert, then rises and they both approach the credence table and sign the Church documents recording the Confirmation. While this occurs, the Cantors chant Psalm 50 and/or Psalm 129.}}
+
+\begin{latinenglishsection}
+
+\section*{Psalm 50}
+
+\rubric{\color{red}The Psalms are chanted standing.}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{psalm_50_1_2}
+	
+	\begin{verses}{1}
+	
+	\item Et secúndum multitúdinem miseratiónum tu\textbf{á}rum,~* dele iniquitá\textit{tem} \textbf{me}am.
+
+	\item Amplius lava me ab iniquitáte \textbf{me}a:~* et a peccáto me\textit{o} \textbf{mun}\textbf{da} me.
+	
+	\item Quóniam iniquitátem meam ego co\textbf{gnós}co:~* et peccátum meum contra me \textit{est} \textbf{sem}per.
+	
+	\item Tibi soli peccávi, et malum coram te \textbf{fe}ci:~* ut justificéris in sermónibus tuis, et vincas cum ju\textit{di}\textbf{cá}ris.
+	
+	\item Ecce enim in iniquitátibus con\textbf{cép}tus sum:~* et in peccátis concépit me ma\textit{ter} \textbf{me}a.
+	
+	\item Ecce enim veritátem dile\textbf{xís}ti:~* incérta et occúlta sapiéntiæ tuæ manifestás\textit{ti} \textbf{mi}hi.
+	
+	\item Aspérges me hyssópo, et mun\textbf{dá}bor:~* lavábis me, et super nivem de\textit{al}\textbf{bá}bor.
+	
+	\item Audítui meo dabis gáudium et læ\textbf{tí}tiam:~* et exsultábunt ossa humi\textit{li}\textbf{á}ta.
+	
+	\item Avérte fáciem tuam a peccátis \textbf{me}is:~* et omnes iniquitátes me\textit{as} \textbf{de}le.
+	
+	\item Cor mundum crea in me, \textbf{De}us:~* et spíritum rectum ínnova in viscéri\textit{bus} \textbf{me}is.
+	
+	\item Ne projícias me a fácie \textbf{tu}a:~* et spíritum sanctum tuum ne áufe\textit{ras} \textbf{a} me.
+	
+	\item Redde mihi lætítiam salutáris \textbf{tu}i:~* et spíritu principáli \textit{con}\textbf{fír}\textbf{ma} me.
+	
+	\item Docébo iníquos vias \textbf{tu}as:~* et ímpii ad te con\textit{ver}\textbf{tén}tur.
+	
+	\item Líbera me de sanguínibus, Deus, Deus salútis \textbf{me}æ:~* et exsultábit lingua mea justíti\textit{am} \textbf{tu}am.
+	
+	\item Dómine, lábia mea a\textbf{pé}ries:~* et os meum annuntiábit lau\textit{dem} \textbf{tu}am.
+	
+	\item Quóniam si voluísses sacrifícium, dedíssem \textbf{ú}tique:~* holocáustis non de\textit{lec}\textbf{tá}\textbf{be}ris.
+	
+	\item Sacrifícium Deo spíritus contribu\textbf{lá}tus:~* cor contrítum et humiliátum, Deus, non \textit{de}\textbf{spí}\textbf{ci}es.
+	
+	\item Benígne fac, Dómine, in bona voluntáte tua \textbf{Si}on:~* ut ædificéntur muri \textit{Je}\textbf{rú}\textbf{sa}lem.
+	
+	\item Tunc acceptábis sacrifícium justítiæ, oblatiónes, et holo\textbf{cáus}ta:~* tunc impónent super altáre tu\textit{um} \textbf{ví}\textbf{tu}los.
+	
+	\item {\color{red}\textit{(bow)}} Glória Patri, et \textbf{Fí}lio,~* et Spirítu\textit{i} \textbf{Sanc}to.
+	
+	\item {\color{red}\textit{(rise)}} Sicut erat in princípio, et nunc, et \textbf{sem}per,~* et in s\'{\ae}cula sæculó\textit{rum}. \textbf{A}men.
+	
+	\end{verses}
+}{
+	1. Have mercy on me, O God, 
+	according to thy great mercy. 
+	
+	2. And according to the multitude of thy tender mercies:
+	blot out my iniquity.
+	
+	3. Wash me yet more from my iniquity: 
+	and cleanse me from my sin.
+	
+	4. For I know my iniquity:
+	and my sin is always before me.
+	
+	5. To thee only have I sinned, and have done evil before thee: 
+	that thou mayst be justified in thy words and mayst overcome when thou art judged.
+	
+	6. For behold I was conceived in iniquities; 
+	and in sins did my mother conceive me.
+	
+	7. For behold thou hast loved truth: 
+	the uncertain and hidden things of thy wisdom thou hast made manifest to me.
+	
+	8. Thou shalt sprinkle me with hyssop, and I shall be cleansed: 
+	thou shalt wash me, and I shall be made whiter than snow.
+	
+	9. To my hearing thou shalt give joy and gladness: 
+	and the bones that have been humbled shall rejoice.
+	
+	10. Turn away thy face from my sins: 
+	and blot out all my iniquities.
+	
+	11. Create a clean heart in me, O God: 
+	and renew a right spirit within my bowels.
+	
+	12. Cast me not away from thy face; 
+	and take not thy holy spirit from me.
+	
+	13. Restore unto me the joy of thy salvation: 
+	and strengthen me with a perfect spirit.
+	
+	14. I will teach the unjust thy ways: 
+	and the wicked shall be converted to thee.
+	
+	15. Deliver me from blood, O God, thou God of my salvation: 
+	and my tongue shall extol thy justice.
+	
+	16. O Lord, thou wilt open my lips: 
+	and my mouth shall declare thy praise.
+	
+	17. For if thou hadst desired sacrifice, I would indeed have given it: 
+	with burnt offerings thou wilt not be delighted.
+	
+	18. A sacrifice to God is an afflicted spirit: 
+	a contrite and humbled heart, O God, thou wilt not despise.
+	
+	19. Deal favourably, O Lord, in thy good will with Sion; 
+	that the walls of Jerusalem may be built up.
+	
+	20. Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings: 
+	then shall they lay calves upon thy altar.
+	
+	Glory be to the Father, and to the Son, and to the Holy Spirit,
+	As it was in the beginning, is now, and ever shall be, world without end. Amen.
+}
+
+\end{latinenglishsection}
+
+\begin{latinenglishsection}
+
+\section*{Psalm 129}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{psalm_129_1_2}
+	
+	\begin{verses}{1}
+	
+	\item Fiant aures tuæ inten\textbf{dén}tes:~* in vocem deprecatió\textit{nis} \textbf{me}æ.
+
+	\item Si iniquitátes observáveris, \textbf{Dó}mine:~* Dómine, quis sus\textit{ti}\textbf{né}bit?
+	
+	\item Quia apud te propitiáti\textbf{o} est:~* et propter legem tuam sustínui \textit{te}, \textbf{Dó}\textbf{mi}ne.
+	
+	\item Sustínuit ánima mea in verbo \textbf{e}jus:~* sperávit ánima mea \textit{in} \textbf{Dó}\textbf{mi}no.
+	
+	\item A custódia matutína usque ad \textbf{noc}tem:~* speret Israël \textit{in} \textbf{Dó}\textbf{mi}no.
+	
+	\item Quia apud Dóminum miseri\textbf{cór}dia:~* et copiósa apud eum \textit{red}\textbf{émp}\textbf{ti}o.
+	
+	\item Et ipse rédimet \textbf{Is}raël:~* ex ómnibus iniquitáti\textit{bus} \textbf{e}jus.
+	
+	\item Glória Patri, et \textbf{Fí}lio,~* {\color{red}\textit{(bow)}} et Spirítu\textit{i} \textbf{Sanc}to.
+	
+	\item {\color{red}\textit{(rise)}} Sicut erat in princípio, et nunc, et \textbf{sem}per,~* et in s\'{\ae}cula sæculó\textit{rum}. \textbf{A}men.
+	
+	\end{verses}
+}{
+	1. Out of the depths I have cried to thee, O Lord: 
+	Lord, hear my voice. 
+	
+	2. Let thy ears be attentive:
+	 to the voice of my supplication.
+	
+	3. If thou, O Lord, wilt mark iniquities: 
+	Lord, who shall stand it.
+	
+	4. For with thee there is merciful forgiveness: 
+	and by reason of thy law, I have waited for thee, O Lord. 
+	
+	5. My soul hath relied on his word:
+	My soul hath hoped in the Lord.
+	
+	6. From the morning watch even until night:
+	let Israel hope in the Lord.
+	
+	7. Because with the Lord there is mercy: 
+	and with him plentiful redemption.
+	
+	8. And he shall redeem Israel: 
+	from all his iniquities.
+	
+	Glory be to the Father, and to the Son, and to the Holy Spirit,
+	As it was in the beginning, is now, and ever shall be, world without end. Amen
+}
+
+\end{latinenglishsection}
+
+\vfill\pagebreak
+
+\begin{latinenglishsection}
+
+\section*{Conclusio}
+
+\rubric{\color{red}The convert remains kneeling, while the priest, seated, recites Psalm 50 or Psalm 129 in a hushed tone. After the `Gloria Patri', he rises and leads the following audibly so all may hear it:}
+
+\latinenglishequal{
+	Kyrie eleison. Christe eleison. Kyrie eleison.
+	
+	Pater noster. {\color{red}(secreto)}
+	
+	{\color{red}\Vbar.} Et ne nos inducas in tentationem.
+	
+	{\color{red}\Rbar.} Sed libera nos a malo.
+	
+	{\color{red}\Vbar.} Salvum fac servum tuum.
+	
+	{\color{red}\Rbar.} Deus meus, sperantem in te.
+	
+	{\color{red}\Vbar.} Domine, exaudi orationem meam.
+	
+	{\color{red}\Rbar.} Et clamor meus ad te veniat.
+	
+	{\color{red}\Vbar.} Dominus vobiscum.
+	
+	{\color{red}\Rbar.} Et cum spiritu tuo.
+}{
+	Lord, have mercy. Christ, have mercy. Lord, have mercy. 
+	
+	Our Father {\color{red}(the rest said inaudibly until:)}
+	
+	{\color{red}\Vbar.} And lead us not into temptation.
+	
+	{\color{red}\Rbar.} But deliver us from evil.
+	
+	{\color{red}\Vbar.} Save Thy servant.
+	
+	{\color{red}\Rbar.} Who trusts in Thee, my God.
+	
+	{\color{red}\Vbar.} Lord, heed my prayer.
+	
+	{\color{red}\Rbar.} And let my cry come unto Thee.
+	
+	{\color{red}\Vbar.} The Lord be with you.
+	
+	{\color{red}\Rbar.} And with thy spirit.
+}
+
+\end{latinenglishsection}
+
+\begin{latinenglishsection}
+
+\subsection*{Oratio}
+
+\rubric{\color{red}The priest, remaining standing, audibly says the oration (either chanting or reciting it):}
+
+\latinenglishequal{
+	Oremus.
+	Deus, cui proprium est misereri semper et parcere; {\color{red}\GreDagger}\ suscipe deprecationem nostram, ut hanc famulam tuam quam excommunicationis cate\textit{na con}\textbf{strin}git, miseratio tuae pietatis clementer absolvat.~*
+	Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum. 
+	{\color{red}\Rbar.} Amen.
+}{
+	Let us pray. 
+	God, whose nature is ever merciful and forgiving, accept our prayer that this servant of yours, bound by the fetters of sin, may be pardoned by your loving kindness: through Our Lord Jesus Christ Thy Son, who liveth and reigneth with Thee in the unity of the Holy Spirit, world without end. 
+	{\color{red}\Rbar.} Amen.
+}
+
+\end{latinenglishsection}
+
+\begin{latinenglishsection}
+
+\subsection*{Absolutionem}
+
+\rubric{\color{red}The priest sits and pronounces the absolution from excommunication, inserting the word `perhaps' (forsan) if there is doubt as to whether or not it has been incurred (this is spoken, and not chanted):}
+
+\latinenglishequal{
+	Auctoritate apostolica, qua fungor in hac parte, absolvo te a vinculo excommunicationis quam (forsam) incurristi, et restituo te sacrosanctis Ecclesiae sacramentis, communioni et unitati fidelium: in nomine {\color{red}\maltese}\ Patris, et Filii, et Spiritus sancti. 
+	
+	{\color{red}\Rbar.} Amen.
+}{
+	By the authority of the Holy See which I exercise here, I release you from the bond of excommunication which you have (perhaps) incurred; and I restore you to communion and union with the faithful, as well as to the holy sacraments of the Church; in the name of the {\color{red}\maltese}\ Father, and of the Son, and of the Holy Spirit. 
+
+	{\color{red}\Rbar.} Amen.
+}
+
+\rubric{\color{red}The priest imposes some salutary penance, such as prayers, visits to a church, or the equivalent.}
+
+\section*{Hymnus}
+
+\rubric{\color{red}The closing hymn is that of the Marian anthem proper to the season. It is lead by the Cantor(s) as all process out.}
+
+\end{latinenglishsection}
+
+\subsection*{Alma Redemptoris Mater}
+
+\begin{latinenglishsection}
+
+\rubric{\color{red}From the first Sunday of Advent until the Feast of the Purification on February 2.}
+
+\noindent\underline{Simple:}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{alma_redemptoris_simple}
+}{
+	O loving Mother of our Redeemer, gate of heaven, star of the sea,
+	Hasten to aid thy fallen people who strive to rise once more.
+	Thou who brought forth thy holy Creator, all creation wond'ring, 
+	Yet remainest ever Virgin, taking from Gabriel's lips
+	that joyful "Hail!": be merciful to us sinners.
+}
+
+\end{latinenglishsection}
+
+\vfill\pagebreak
+
+\noindent\underline{Solemn:}
+
+\begin{latinenglishsection}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{alma_redemptoris_solemn}
+}{
+	O loving Mother of our Redeemer, gate of heaven, star of the sea,
+	Hasten to aid thy fallen people who strive to rise once more.
+	Thou who brought forth thy holy Creator, all creation wond'ring, 
+	Yet remainest ever Virgin, taking from Gabriel's lips
+	that joyful "Hail!": be merciful to us sinners.
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\end{latinenglishsection}
+
+\subsection*{Ave Regina Caelorum}
+
+\begin{latinenglishsection}
+
+\rubric{\color{red}From after Candlemas until the Easter Vigil.}
+
+\noindent\underline{Simple:}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{ave_regina_caelorum_simple}
+}{
+	Welcome, O Queen of Heaven. 
+	Welcome, O Lady of Angels
+	Hail! thou root, hail! thou gate
+	From whom unto the world, a light has arisen:
+
+	Rejoice, O glorious Virgin, 
+	Lovely beyond all others, 
+	Farewell, most beautiful maiden, 
+	And pray for us to Christ.
+}
+
+\end{latinenglishsection}
+
+\vfill\pagebreak
+
+\noindent\underline{Solemn:}
+
+\begin{latinenglishsection}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{ave_regina_caelorum_solemn}
+}{
+	Welcome, O Queen of Heaven. 
+	Welcome, O Lady of Angels
+	Hail! thou root, hail! thou gate
+	From whom unto the world, a light has arisen:
+
+	Rejoice, O glorious Virgin, 
+	Lovely beyond all others, 
+	Farewell, most beautiful maiden, 
+	And pray for us to Christ.
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\end{latinenglishsection}
+
+\subsection*{Regina Caeli}
+
+\begin{latinenglishsection}
+
+\rubric{\color{red}From Easter Vigil through Pentecost Sunday.}
+
+\noindent\underline{Simple:}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{regina_caeli_simple}
+}{
+	Queen of Heaven, rejoice, alleluia. 
+	For He whom you did merit to bear, alleluia. 
+	Has risen, as he said, alleluia. 
+	Pray for us to God, alleluia.
+	Rejoice and be glad, O Virgin Mary, alleluia. 
+	For the Lord has truly risen, alleluia.
+}
+
+\end{latinenglishsection}
+
+\noindent\underline{Solemn:}
+
+\begin{latinenglishsection}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{regina_caeli_solemn}
+}{
+	Queen of Heaven, rejoice, alleluia. 
+	For He whom you did merit to bear, alleluia. 
+	Has risen, as he said, alleluia. 
+	Pray for us to God, alleluia.
+	Rejoice and be glad, O Virgin Mary, alleluia. 
+	For the Lord has truly risen, alleluia.
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\end{latinenglishsection}
+
+\subsection*{Salve Regina}
+
+\begin{latinenglishsection}
+
+\rubric{\color{red}From the day after Pentecost Sunday until the first Sunday of Advent.}
+
+\noindent\underline{Simple:}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{salve_regina_simple}
+}{
+	Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn, then, most gracious advocate, thine eyes of mercy toward us, and after this, our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.
+}
+
+\end{latinenglishsection}
+
+\vfill\pagebreak
+
+\noindent\underline{Solemn:}
+
+\begin{latinenglishsection}
+
+\latinenglish{
+	\gresetinitiallines{1}
+	\gregorioscore{salve_regina_solemn}
+}{
+	Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn, then, most gracious advocate, thine eyes of mercy toward us, and after this, our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\end{latinenglishsection}
+
+\end{document}
